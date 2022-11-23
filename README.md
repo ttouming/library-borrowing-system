@@ -1,6 +1,6 @@
 # library-borrowing-system
 ## Description
-The program aims to provide a tool borrowing system using c# which can be divided into two parts. One is menu, the other is classes which are Tool, ToolCollection, Member and MemberCollection class. The menu provides a simple interface for users interacting with the program. Turning to classes, the ToolCollection class uses an array of Tool object to store the tool objects. For MemberCollection, I use a hastable of Member class to store the member objects. 
+The program aims to provide a tool borrowing system using c# which can be divided into two parts. One is menu, the other is classes which are Tool, ToolCollection, Member and MemberCollection class. The menu provides a simple interface for users interacting with the program. Turning to classes, the ToolCollection class uses an array of Tool object to store the tool objects. For MemberCollection, I use a hastable of Member class to store the member objects. Futhermore, i used a 3-D array to store the tool which could enhance time efficiency when adding tools. I also used heap sort in displaying top-3 most frequent borrowed tools.
 
 ![image](https://user-images.githubusercontent.com/115144351/203486106-122b800f-fb77-4860-bb9f-a2a832f84cc1.png)
 
@@ -9,17 +9,7 @@ The program aims to provide a tool borrowing system using c# which can be divide
 ## Algorithm Design & Analysis
 ### Tool
 A 3-dimensional array is used for storing tool objects in ToolCollection class. By using a 3-D array, the program can access each tool object immediately by giving it the location which make it easier for storing, removing, and so on. Comparing to 1-D and 2-D array which have to traverse more for loops to access the tool object and need to have more variable to store needed data, 3-D array can do any manipulation in a glimpse and with less storage needed. It is far more efficient in time and space for using a 3-D array to store and use tool objects in the system. In a nutshell, 3-D array is best suit for the system. 
-For example, if the program tried to access the first tool in the first category and in the first type, it can access like this toolCollec[0, 0, 0] which is quite simple and efficient. And, I only need to initiate name, number, available number, borrowed times, and member collection in my tool class which would be less than using 1-D and 2-D array. I have to create more variables to store category, type, and so on in 1-D and 2-D array.
-
-![image](https://user-images.githubusercontent.com/115144351/203486832-4383902f-e667-4f45-a52c-069c71f76acc.png)
-
-(pseudo code: 3-D array)
-
 As a result of using 3-D array, the best case of time efficiency is Cbest(n) = ϴ(1) and the worst case is Cworst(n) = ϴ(n) in Add a tool function. Apparently, it would be lot more time and space efficient comparing to using 1-D and 2-D array with nested for loop and if-else condition.
-
-![image](https://user-images.githubusercontent.com/115144351/203486871-2b2f297f-be8c-420d-b727-32bb7917828d.png)
-
-(pseudo code: Add_tool)
 
 ### Display top three most borrowing tools
 Heap sort is implemented for Display top three. The detailed design pseudo codes are listed in the following pictures. They can be divided into 3 parts as Check_Top3_Borrowing, HeapSort and Heapify. Check_Top3_Borrowing is to get the result from heap sort function and display the top 3.
