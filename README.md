@@ -20,14 +20,17 @@ As a result of using 3-D array, the best case of time efficiency is Cbest(n) = Ï
 
 ### Display top three most borrowing tools
 Heap sort is implemented for Display top three. The detailed design pseudo codes are listed in the following pictures. They can be divided into 3 parts as Check_Top3_Borrowing, HeapSort and Heapify. Check_Top3_Borrowing is to get the result from heap sort function and display the top 3.
+
 ![image](https://user-images.githubusercontent.com/115144351/203486954-8633e917-d598-4152-8fef-3505fcd7e1ff.png)
 (pseudo code: Check_Top3_Borrowing)
 
 HeapSort is to sort the array into descending order. In HeapSort, there are 2 main function that are Heap Bottom Up and Minimum Key Deletion.
+
 ![image](https://user-images.githubusercontent.com/115144351/203486983-299986a7-6df9-487a-b68d-c8198fff0825.png)
 (pseudo code: HeapSort)
 
 Heapify is to convert tree or subtree into heap.
+
 ![image](https://user-images.githubusercontent.com/115144351/203487019-51332920-816e-4109-abdc-50c9d40c7a39.png)
 (pseudo code: Heapify)
 
