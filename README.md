@@ -3,6 +3,7 @@
 The program aims to provide a tool borrowing system using c# which can be divided into two parts. One is menu, the other is classes which are Tool, ToolCollection, Member and MemberCollection class. The menu provides a simple interface for users interacting with the program. Turning to classes, the ToolCollection class uses an array of Tool object to store the tool objects. For MemberCollection, I use a hastable of Member class to store the member objects. 
 
 ![image](https://user-images.githubusercontent.com/115144351/203486106-122b800f-fb77-4860-bb9f-a2a832f84cc1.png)
+
 (The picture illustrates a rough idea of some main elements and interaction in the program.)
 
 ## Algorithm Design & Analysis
@@ -11,27 +12,32 @@ A 3-dimensional array is used for storing tool objects in ToolCollection class. 
 For example, if the program tried to access the first tool in the first category and in the first type, it can access like this toolCollec[0, 0, 0] which is quite simple and efficient. And, I only need to initiate name, number, available number, borrowed times, and member collection in my tool class which would be less than using 1-D and 2-D array. I have to create more variables to store category, type, and so on in 1-D and 2-D array.
 
 ![image](https://user-images.githubusercontent.com/115144351/203486832-4383902f-e667-4f45-a52c-069c71f76acc.png)
+
 (pseudo code: 3-D array)
 
 As a result of using 3-D array, the best case of time efficiency is Cbest(n) = ϴ(1) and the worst case is Cworst(n) = ϴ(n) in Add a tool function. Apparently, it would be lot more time and space efficient comparing to using 1-D and 2-D array with nested for loop and if-else condition.
 
 ![image](https://user-images.githubusercontent.com/115144351/203486871-2b2f297f-be8c-420d-b727-32bb7917828d.png)
+
 (pseudo code: Add_tool)
 
 ### Display top three most borrowing tools
 Heap sort is implemented for Display top three. The detailed design pseudo codes are listed in the following pictures. They can be divided into 3 parts as Check_Top3_Borrowing, HeapSort and Heapify. Check_Top3_Borrowing is to get the result from heap sort function and display the top 3.
 
 ![image](https://user-images.githubusercontent.com/115144351/203486954-8633e917-d598-4152-8fef-3505fcd7e1ff.png)
+
 (pseudo code: Check_Top3_Borrowing)
 
 HeapSort is to sort the array into descending order. In HeapSort, there are 2 main function that are Heap Bottom Up and Minimum Key Deletion.
 
 ![image](https://user-images.githubusercontent.com/115144351/203486983-299986a7-6df9-487a-b68d-c8198fff0825.png)
+
 (pseudo code: HeapSort)
 
 Heapify is to convert tree or subtree into heap.
 
 ![image](https://user-images.githubusercontent.com/115144351/203487019-51332920-816e-4109-abdc-50c9d40c7a39.png)
+
 (pseudo code: Heapify)
 
 The efficiency of Heap Bottom Up is O(n). Additionally, the efficiency of Minimum Key Deletion is O(nlogn). As a result, the efficiency of Heap sort is O(n) + O(nlogn) = O(nlogn). 
